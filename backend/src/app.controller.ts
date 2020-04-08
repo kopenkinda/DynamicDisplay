@@ -1,5 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
+
+const RESPONSE_PLANNING = {
+  description: 'planning ecran',
+  content: {
+    'application/json': {
+      schema: {
+        type: 'object',
+        title: 'planningResponse',
+        properties: {
+        },
+      },
+    },
+  },
+};
 
 @Controller()
 export class AppController {
@@ -9,4 +23,5 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
 }
